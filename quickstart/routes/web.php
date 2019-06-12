@@ -58,6 +58,7 @@ Route::get('/',function(){
   */
 
   Route::delete('/task/{task}',function(Task $task){
-    //{task}という処理で消すタスクを特定し、function(Task $task)に送る。
-    //use Illuminate\Http\Request;が無いとエラーになる
+    $task->delete();
+
+    return redirect('/');
   });
